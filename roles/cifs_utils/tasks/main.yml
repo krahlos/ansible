@@ -1,0 +1,6 @@
+---
+# Install cifs-utils for SMB mounts
+- name: Install cifs-utils
+  ansible.builtin.package:
+    name: cifs-utils
+    state: present

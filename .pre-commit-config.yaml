@@ -1,0 +1,29 @@
+---
+default_install_hook_types: [pre-commit, commit-msg, pre-push]
+minimum_pre_commit_version: 3.6.0
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-added-large-files
+        args: [--maxkb=1000]
+      - id: check-toml
+      - id: check-yaml
+      - id: debug-statements
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+
+  - repo: local
+    hooks:
+      - id: ansible-syntax-check
+        name: Ansible playbook syntax-check
+        entry: ansible-playbook --syntax-check site.yml
+        language: system
+        pass_filenames: false
+        types: [yaml]
+
+  - repo: https://github.com/ansible/ansible-lint
+    rev: v6.17.0
+    hooks:
+      - id: ansible-lint
+        files: \.(ya?ml)$

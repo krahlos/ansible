@@ -1,0 +1,6 @@
+---
+# Install Neovim editor
+- name: Install neovim
+  ansible.builtin.package:
+    name: neovim
+    state: present

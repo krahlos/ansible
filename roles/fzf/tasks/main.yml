@@ -1,0 +1,6 @@
+---
+# Install the fzf fuzzy-finder
+- name: Install fzf
+  ansible.builtin.package:
+    name: fzf
+    state: present

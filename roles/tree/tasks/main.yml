@@ -1,0 +1,6 @@
+---
+# Install tree
+- name: Install tree
+  ansible.builtin.package:
+    name: tree
+    state: present

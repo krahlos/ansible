@@ -1,0 +1,25 @@
+---
+- name: Install CLI tools and helpers
+  hosts: all
+  become: yes
+  gather_facts: yes
+
+  pre_tasks:
+    - name: Ensure apt cache is up to date
+      ansible.builtin.apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+  roles:
+    - btop
+    - chezmoi
+    - cifs_utils
+    - docker
+    - fzf
+    - git
+    - lazygit
+    - neovim
+    - nfs_common
+    - ripgrep
+    - tmux
+    - tree

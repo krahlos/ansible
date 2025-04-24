@@ -1,0 +1,6 @@
+---
+# Install btop resource monitor
+- name: Install btop
+  ansible.builtin.package:
+    name: btop
+    state: present
